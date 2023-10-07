@@ -59,17 +59,17 @@ export default class MyThree {
 
 // Draco loader
 const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('/draco/')
+dracoLoader.setDecoderPath('draco/')
 
 // GLTF loader
 const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(dracoLoader)
-const bakedTexture = textureLoader.load('/texture.jpg')
+const bakedTexture = textureLoader.load('texture.jpg')
 bakedTexture.flipY = false
 bakedTexture.colorSpace = THREE.SRGBColorSpace
 const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture })
 gltfLoader.load(
-    '/robot.glb',
+    'robot.glb',
     (gltf) =>
     {
         gltf.scene.traverse((child) =>
